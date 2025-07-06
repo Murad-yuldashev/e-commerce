@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glotr.uz</title>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/categories.css">
+    <script defer src="js/header.js"></script>
+    <script defer src="js/main-header.js"></script>
+    <script defer src="js/categories.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="nav">
+                <div class="language-dropdown" id="languageDropdown">
+                    <button class="language-dropdown__trigger" id="languageTrigger">
+                        <span class="language-dropdown__text">Русский</span>
+                        <div class="language-dropdown__arrow"></div>
+                    </button>
+                    <div class="language-dropdown__menu" id="languageMenu">
+                        <div class="language-dropdown__item language-dropdown__item--active" data-lang="ru">Русский</div>
+                        <div class="language-dropdown__item" data-lang="en">English</div>
+                        <div class="language-dropdown__item" data-lang="uz">O'zbek</div>
+                    </div>
+                </div>
+
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link" data-i18n="for-buyer">Для покупателя</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link" data-i18n="for-seller">Для продавца</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="action-links">
+                <a href="#" class="action-links__link" data-i18n="add-company">Добавить компанию</a>
+                <a href="#" class="action-links__link" data-i18n="become-buyer">Стать покупателем</a>
+            </div>
+        </div>
+
+<!--        navbar   -->
+        <section class="header-navbar" role="banner">
+            <div class="header-navbar__container header-navbar__container--main">
+                <!--
+                * Logo Block
+                * Brand identity with icon and text
+                * Uses proper link structure for navigation
+                -->
+                <a href="/" class="logo" aria-label="Glotr.uz главная страница">
+                    <img src="./assets/icons/logo.png" alt="logo">
+                </a>
+
+                <!--
+                * Main Navigation
+                * Primary navigation elements including CTA and search
+                -->
+                <nav class="nav-main" role="navigation" aria-label="Основная навигация">
+                    <div class="nav__cta-button" role="button">
+                        <img src="./assets/icons/menu.svg" alt="menu">
+                        <span data-i18n="catalog">Каталог</span>
+                    </div>
+
+<!--                    Search      -->
+                    <div class="search">
+                        <div class="search__container">
+                            <input
+                                    data-i18n-placeholder="search_on_glotr"
+                                    type="search"
+                                    class="search__input"
+                                    placeholder="Искать на Glotr"
+                                    aria-label="Поиск товаров"
+                                    name="search"
+                            />
+                            <button class="search__button" type="submit" aria-label="Найти">
+                                <img src="./assets/icons/search.svg" alt="search">
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                <!--
+                * User Actions Block
+                * Location selector and user-specific actions
+                -->
+                <div class="actions" role="toolbar" aria-label="Действия пользователя">
+                    <!-- Location selector -->
+<!--                    <button class="actions__location" aria-label="Выбрать местоположение">-->
+<!--                        <img src="./assets/icons/location.svg" alt="location">-->
+<!--                        <span data-i18n="">Сурхандарьинская...</span>-->
+<!--                        <img src="./assets/icons/chevron-down.svg" alt="chevron-down">-->
+<!--                    </button>-->
+                    <div class="actions__location" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Выбрать регион">
+                        <img src="./assets/icons/location.svg" alt="location">
+                        <span data-i18n="Surkhandarya" class="actions__location-text">Сурхандарьинская...</span>
+                        <img src="./assets/icons/chevron-down.svg" alt="chevron-down">
+
+                        <!-- Dropdown menu -->
+                        <div class="location-dropdown" role="listbox" aria-label="Выбор региона">
+                            <div data-i18n="Surkhandarya" class="location-dropdown__item location-dropdown__item--selected" role="option" aria-selected="true" data-region="surkhandarya">
+                                Сурхандарьинская область
+                            </div>
+                            <div data-i18n="Tashkent-City" class="location-dropdown__item" role="option" aria-selected="false" data-region="tashkent-city">
+                                г. Ташкент
+                            </div>
+                            <div data-i18n="Tashkent" class="location-dropdown__item" role="option" aria-selected="false" data-region="tashkent-region">
+                                Ташкентская область
+                            </div>
+                            <div data-i18n="Andijan" class="location-dropdown__item" role="option" aria-selected="false" data-region="andijan">
+                                Андижанская область
+                            </div>
+                            <div data-i18n="Bukhara" class="location-dropdown__item" role="option" aria-selected="false" data-region="bukhara">
+                                Бухарская область
+                            </div>
+                            <div data-i18n="Jizzakh" class="location-dropdown__item" role="option" aria-selected="false" data-region="djizak">
+                                Джизакская область
+                            </div>
+                            <div data-i18n="Kashkadarya" class="location-dropdown__item" role="option" aria-selected="false" data-region="kashkadarya">
+                                Кашкадарьинская область
+                            </div>
+                            <div data-i18n="Navoi" class="location-dropdown__item" role="option" aria-selected="false" data-region="navoi">
+                                Навоийская область
+                            </div>
+                            <div data-i18n="Namangan" class="location-dropdown__item" role="option" aria-selected="false" data-region="namangan">
+                                Наманганская область
+                            </div>
+                            <div data-i18n="Samarkand" class="location-dropdown__item" role="option" aria-selected="false" data-region="samarkand">
+                                Самаркандская область
+                            </div>
+                            <div data-i18n="Syrdarya" class="location-dropdown__item" role="option" aria-selected="false" data-region="sirdarya">
+                                Сырдарьинская область
+                            </div>
+                            <div data-i18n="Fergana" class="location-dropdown__item" role="option" aria-selected="false" data-region="fergana">
+                                Ферганская область
+                            </div>
+                            <div data-i18n="Khorezm" class="location-dropdown__item" role="option" aria-selected="false" data-region="khorezm">
+                                Хорезмская область
+                            </div>
+                            <div data-i18n="Karakalpakstan" class="location-dropdown__item" role="option" aria-selected="false" data-region="karakalpakstan">
+                                Республика Каракалпакстан
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compare button -->
+                    <div class="action-buttons">
+                        <button class="actions__icon-button" aria-label="Сравнить товары">
+                            <img src="./assets/icons/scale.svg" alt="scale">
+                            <span class="actions__badge">2</span>
+                        </button>
+
+                        <!-- Favorites button -->
+                        <button class="actions__icon-button" aria-label="Избранное">
+                            <img src="./assets/icons/like.svg" alt="like">
+                        </button>
+
+                        <!-- Shopping cart button -->
+                        <button class="actions__icon-button" aria-label="Корзина">
+                            <img src="./assets/icons/shopping-cart.svg" alt="badge">
+                            <span class="actions__badge">4</span>
+                        </button>
+
+                        <!-- User profile button -->
+                        <button class="actions__icon-button" aria-label="Профиль пользователя">
+                            <img src="./assets/icons/user.svg" alt="user">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main class="header-navbar__container">
+
+<!--        Hero  -->
+        <section class="hero-section">
+            <div class="hero-header">
+                <h1 class="hero-header" data-i18n="become_seller">Стать продавцом на</h1>
+                <span class="hero-glotr">glotr</span>
+            </div>
+            <button class="hero-btn" data-i18n="register">Зарегистрироваться</button>
+        </section>
+
+<!--        Breadcrumb Navigation -->
+        <section class="breadcrumb" aria-label="Навигация по сайту">
+            <div class="breadcrumb__container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="/" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__current">Телефоны и планшеты</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+<!--        Carousel Category -->
+        <section class="categories" role="main">
+            <!-- Header section -->
+            <div class="categories__header">
+                <h1 class="categories__title" data-i18n="phones_and_tablets">Телефоны и планшеты</h1>
+            </div>
+
+            <!-- Loading state -->
+            <div class="categories__loading" id="categoriesLoading" data-i18n="loading_categories">
+                Загрузка категорий...
+            </div>
+
+            <!-- Carousel container -->
+            <div class="categories__carousel" id="categoriesCarousel" style="display: none;">
+                <div class="categories__swiper swiper">
+                    <div class="swiper-wrapper" id="categoriesWrapper">
+                        <!-- Categories will be inserted here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <div class="categories__navigation" aria-label="Навигация по категориям">
+<!--                    <button-->
+<!--                            class="categories__nav-btn categories__nav-btn&#45;&#45;prev"-->
+<!--                            id="prevBtn"-->
+<!--                            type="button"-->
+<!--                            aria-label="Предыдущие категории"-->
+<!--                    >-->
+<!--                        ◀-->
+<!--                    </button>-->
+                    <button
+                            class="categories__nav-btn categories__nav-btn--next"
+                            id="nextBtn"
+                            type="button"
+                            aria-label="Следующие категории"
+                    >
+                        <img src="./assets/icons/chevron-right.svg" alt="chevron-right">
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
