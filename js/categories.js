@@ -27,71 +27,61 @@ class CategoriesCarousel {
             {
                 id: 1,
                 name: 'Ноутбуки',
-                icon: '💻',
-                backgroundColor: '#e3f2fd',
+                icon: '/assets/img/category-1.png',
                 slug: 'notebooks'
             },
             {
                 id: 2,
                 name: 'Мониторы',
-                icon: '🖥️',
-                backgroundColor: '#f3e5f5',
+                icon: '/assets/img/category-2.png',
                 slug: 'monitors'
             },
             {
                 id: 3,
                 name: 'Клавиатуры',
-                icon: '⌨️',
-                backgroundColor: '#e8f5e8',
+                icon: '/assets/img/category-3.png',
                 slug: 'keyboards'
             },
             {
                 id: 4,
                 name: 'Комплектующие',
-                icon: '🔧',
-                backgroundColor: '#fff3e0',
+                icon: '/assets/img/category-1.png',
                 slug: 'components'
             },
             {
                 id: 5,
                 name: 'Аксессуары',
-                icon: '🎧',
-                backgroundColor: '#fce4ec',
+                icon: '/assets/img/category-2.png',
                 slug: 'accessories'
             },
             {
                 id: 6,
                 name: 'Клавиатуры',
-                icon: '⌨️',
-                backgroundColor: '#e1f5fe',
+                icon: '/assets/img/category-3.png',
                 slug: 'keyboards-gaming'
             },
             {
                 id: 7,
                 name: 'Серверы',
-                icon: '🖲️',
-                backgroundColor: '#ffebee',
+                icon: '/assets/img/category-1.png',
                 slug: 'servers'
             },
             {
                 id: 8,
                 name: 'Наушники',
-                icon: '🎧',
-                backgroundColor: '#f1f8e9',
+                icon: '/assets/img/category-2.png',
                 slug: 'headphones'
             },
             {
                 id: 9,
                 name: 'Планшеты',
-                icon: '📱',
-                backgroundColor: '#e8eaf6',
+                icon: '/assets/img/category-3.png',
                 slug: 'tablets'
             },
             {
                 id: 10,
                 name: 'Телефоны',
-                icon: '📞',
-                backgroundColor: '#e0f2f1',
+                icon: '/assets/img/category-1.png',
                 slug: 'phones'
             }
         ];
@@ -115,10 +105,9 @@ class CategoriesCarousel {
                         >
                             <div 
                                 class="category-card__icon" 
-                                style="background-color: ${category.backgroundColor}"
                                 aria-hidden="true"
                             >
-                                ${category.icon}
+                                <img src="${category.icon}" alt="category">
                             </div>
                             <h2 class="category-card__title">${category.name}</h2>
                         </article>

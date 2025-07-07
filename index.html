@@ -13,9 +13,17 @@
 
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/categories.css">
+    <link rel="stylesheet" href="assets/css/product_card.css">
+    <link rel="stylesheet" href="assets/css/filter.css">
+    <link rel="stylesheet" href="assets/css/filter-product.css">
+
     <script defer src="js/header.js"></script>
     <script defer src="js/main-header.js"></script>
     <script defer src="js/categories.js"></script>
+    <script defer src="js/mock_data.js"></script>
+    <script defer src="js/filter-carousel.js"></script>
+    <script defer src="js/dropdown.js"></script>
+    <script defer src="js/filter-product.js"></script>
 </head>
 <body>
     <header class="header">
@@ -243,6 +251,311 @@
                     >
                         <img src="./assets/icons/chevron-right.svg" alt="chevron-right">
                     </button>
+                </div>
+            </div>
+
+            <div class="filter-carousel__container">
+            <!-- Second Carousel container -->
+                <div class="brand-carousel">
+                    <!-- Carousel container -->
+                    <div class="brand-carousel__container">
+                        <div class="brand-carousel__swiper swiper">
+                            <div class="swiper-wrapper" id="brandWrapper">
+                                <!-- Brand items will be inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- Next button positioned on the right -->
+                        <button
+                                class="brand-carousel__next"
+                                id="nextBtnTwo"
+                                type="button"
+                                aria-label="Следующие бренды"
+                        >
+                            <img src="./assets/icons/chevron-right.svg" alt="chevron-right">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="demo-container">
+
+                    <!-- sort-dropdown -->
+                    <div class="sort-dropdown" id="sortDropdown">
+                        <!--  trigger button -->
+                        <div class="sort-dropdown__trigger"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-label="Выберите вариант сортировки">
+                            <span class="sort-dropdown__label">Сортировка:</span>
+                            <span class="sort-dropdown__value">Дешевые</span>
+                            <img class="" src="./assets/icons/chevron-down.svg" alt="chevron-down">
+                        </div>
+
+                        <!-- dropdown menu -->
+                        <div class="sort-dropdown__menu" role="listbox" aria-label="Варианты сортировки">
+                            <button class="sort-dropdown__option sort-dropdown__option--active"
+                                    type="button"
+                                    role="option"
+                                    aria-selected="true"
+                                    data-value="cheap">
+                                Дешевые
+                            </button>
+                            <button class="sort-dropdown__option"
+                                    type="button"
+                                    role="option"
+                                    aria-selected="false"
+                                    data-value="expensive">
+                                Дорогие
+                            </button>
+                            <button class="sort-dropdown__option"
+                                    type="button"
+                                    role="option"
+                                    aria-selected="false"
+                                    data-value="popular">
+                                Популярные
+                            </button>
+                            <button class="sort-dropdown__option"
+                                    type="button"
+                                    role="option"
+                                    aria-selected="false"
+                                    data-value="newest">
+                                Новинки
+                            </button>
+                            <button class="sort-dropdown__option"
+                                    type="button"
+                                    role="option"
+                                    aria-selected="false"
+                                    data-value="rating">
+                                По рейтингу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="filter__products-container" role="main">
+            <aside class="filter" role="complementary" aria-label="Фильтр товаров">
+
+                <!-- Categories section -->
+                <section class="filter__section">
+                    <button class="filter__header"
+                            type="button"
+                            aria-expanded="true"
+                            aria-controls="categories-content"
+                            data-filter="categories">
+                        <span>Категории</span>
+                        <svg class="filter__toggle filter__toggle--expanded"
+                             aria-hidden="true"
+                             viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="filter__content filter__content--expanded" id="categories-content">
+                        <ul class="filter__list" role="list">
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="laptops">
+                                    Ноутбуки
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item filter__simple-item--active"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="computers">
+                                    Компьютеры
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="keyboards">
+                                    Клавиатуры
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="mice">
+                                    Мыши
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="speakers">
+                                    Колонки
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="keyboards-2">
+                                    Клавиатуры
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="filter__simple-item"
+                                     tabindex="0"
+                                     role="button"
+                                     data-category="computers-2">
+                                    Компьютеры
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Brands section -->
+                <section class="filter__section">
+                    <button class="filter__header"
+                            type="button"
+                            aria-expanded="true"
+                            aria-controls="brands-content"
+                            data-filter="brands">
+                        <span>Бренды</span>
+                        <svg class="filter__toggle filter__toggle--expanded"
+                             aria-hidden="true"
+                             viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="filter__content filter__content--expanded" id="brands-content">
+                        <ul class="filter__list" role="list">
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="artel"
+                                           aria-describedby="artel-label">
+                                    <span class="filter__label" id="artel-label">Artel</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="lg"
+                                           checked
+                                           aria-describedby="lg-label">
+                                    <span class="filter__label" id="lg-label">LG</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="samsung"
+                                           aria-describedby="samsung-label">
+                                    <span class="filter__label" id="samsung-label">SAMSUNG</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="shivaki"
+                                           aria-describedby="shivaki-label">
+                                    <span class="filter__label" id="shivaki-label">Shivaki</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="samsung-2"
+                                           aria-describedby="samsung-2-label">
+                                    <span class="filter__label" id="samsung-2-label">SAMSUNG</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="khit"
+                                           aria-describedby="khit-label">
+                                    <span class="filter__label" id="khit-label">ХИТ</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="shivaki-2"
+                                           aria-describedby="shivaki-2-label">
+                                    <span class="filter__label" id="shivaki-2-label">Shivaki</span>
+                                </label>
+                            </li>
+                            <li class="filter__item">
+                                <label class="filter__option">
+                                    <input type="checkbox"
+                                           class="filter__checkbox"
+                                           name="brand"
+                                           value="khit-2"
+                                           aria-describedby="khit-2-label">
+                                    <span class="filter__label" id="khit-2-label">ХИТ</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Price section -->
+                <section class="filter__section">
+                    <button class="filter__header"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="price-content"
+                            data-filter="price">
+                        <span>Цена</span>
+                        <svg class="filter__toggle"
+                             aria-hidden="true"
+                             viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="filter__content" id="price-content">
+                        <p style="padding: 16px 0; color: #666;">Содержимое фильтра по цене</p>
+                    </div>
+                </section>
+
+                <!-- Discount section -->
+                <section class="filter__section">
+                    <button class="filter__header"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="discount-content"
+                            data-filter="discount">
+                        <span>Наличие скидок</span>
+                        <svg class="filter__toggle"
+                             aria-hidden="true"
+                             viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="filter__content" id="discount-content">
+                        <p style="padding: 16px 0; color: #666;">Содержимое фильтра по скидкам</p>
+                    </div>
+                </section>
+
+            </aside>
+
+            <div class="container">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be inserted here by JavaScript -->
                 </div>
             </div>
         </section>

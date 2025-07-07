@@ -1,0 +1,275 @@
+.brand-carousel {
+    position: relative;
+    margin: 24px 0;
+}
+
+/* Carousel container */
+.brand-carousel__container {
+    position: relative;
+    overflow: hidden;
+    max-width: 1060px;
+    width: 100%;
+}
+
+.brand-carousel__swiper {
+    overflow: visible;
+}
+
+.brand-carousel__slide {
+    width: auto;
+    height: auto;
+}
+
+/* Brand item component */
+.brand-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-height: 40px;
+    text-decoration: none;
+    user-select: none;
+}
+
+.brand-item:hover {
+    border-color: #ff4757;
+    color: #ff4757;
+    background: #fff5f5;
+}
+
+.brand-item:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.3);
+}
+
+/* Active state - red border */
+.brand-item--active {
+    border-color: #ff4757;
+    color: #ff4757;
+    background: #fff5f5;
+}
+
+/* Next button positioned on the right */
+.brand-carousel__next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 14px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-carousel__next:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.brand-carousel__next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+.brand-carousel__next:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .brand-carousel {
+        padding: 16px;
+    }
+
+    .brand-carousel__next {
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .brand-item {
+        font-size: 13px;
+        padding: 6px 12px;
+        min-height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-carousel {
+        padding: 12px;
+    }
+
+    .brand-carousel__next {
+        right: 12px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-item {
+        font-size: 12px;
+        padding: 4px 10px;
+        min-height: 32px;
+    }
+}
+
+.sort-dropdown {
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+}
+
+/* sort-dropdown__trigger */
+.filter-carousel__container {
+    position: relative;
+    max-width: 1278px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+.sort-dropdown__trigger {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #667085;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    min-width: 200px;
+    user-select: none;
+}
+
+/* sort-dropdown__label */
+.sort-dropdown__label {
+    color: #888;
+    font-weight: 400;
+}
+
+/* sort-dropdown__value */
+.sort-dropdown__value {
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* sort-dropdown__arrow */
+.sort-dropdown__arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #666;
+    transition: transform 0.2s ease;
+}
+
+/* sort-dropdown__menu */
+.sort-dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    margin-top: 4px;
+}
+
+/* sort-dropdown__option */
+.sort-dropdown__option {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    display: block;
+    text-decoration: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+/* sort-dropdown--open */
+/*.sort-dropdown--open .sort-dropdown__trigger {*/
+/*    border-color: #007bff;*/
+/*    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);*/
+/*}*/
+
+.sort-dropdown--open .sort-dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+.sort-dropdown--open .sort-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* sort-dropdown__option--active */
+.sort-dropdown__option--active {
+    background-color: #f8f9fa;
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* Hover states */
+
+.sort-dropdown__option:hover {
+    background-color: #f8f9fa;
+}
+
+.sort-dropdown__option:focus {
+    outline: none;
+    background-color: #e3f2fd;
+}
+
+/* Demo container */
+/*.demo-container {*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+.demo-container h1 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+.demo-container p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.5;
+}

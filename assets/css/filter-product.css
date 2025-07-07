@@ -1,0 +1,209 @@
+.filter__products-container {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.filter {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 252px;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Filter section styles */
+.filter__section {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 14px;
+}
+
+.filter__section:last-child {
+    border-bottom: none;
+}
+
+/* Filter header styles */
+.filter__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #344054;
+    transition: background-color 0.2s ease;
+}
+
+.filter__header:hover {
+    background-color: #f8f9fa;
+}
+
+.filter__header:focus {
+    outline: 2px solid #007bff;
+    outline-offset: -2px;
+}
+
+/* Filter toggle icon */
+.filter__toggle {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+    fill: #666;
+}
+
+.filter__toggle--expanded {
+    transform: rotate(180deg);
+}
+
+/* Filter content styles */
+.filter__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+}
+
+.filter__content--expanded {
+    max-height: 300px;
+    padding: 0 20px 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filter__content::-webkit-scrollbar {
+    width: 2px;
+    height: 40px;
+}
+
+.filter__content::-webkit-scrollbar-track {
+    background: #344054;
+    border-radius: 3px;
+}
+
+.filter__content::-webkit-scrollbar-thumb {
+    background: #344054;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.filter__content::-webkit-scrollbar-thumb:hover {
+    background: #344054;
+}
+
+/* Firefox scrollbar */
+.filter__content {
+    scrollbar-width: thin;
+    scrollbar-color: #344054 #f0f0f0;
+}
+
+/* Filter list styles */
+.filter__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter__item {
+    margin-bottom: 8px;
+}
+
+.filter__item:last-child {
+    margin-bottom: 0;
+}
+
+/* Filter option styles */
+.filter__option {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    margin: 0 -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.filter__option:hover {
+    background-color: #f8f9fa;
+}
+
+/* Checkbox styles */
+.filter__checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+.filter__checkbox:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Filter label styles */
+.filter__label {
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    user-select: none;
+    flex-grow: 1;
+}
+
+/* Simple list items for categories */
+.filter__simple-item {
+    padding: 8px;
+    color: #344054;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    border-radius: 4px;
+    margin: 0 -8px;
+}
+
+.filter__simple-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.filter__simple-item--active {
+    color: #007bff;
+    background-color: #f0f8ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .filter {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .filter__content,
+    .filter__toggle,
+    .filter__option {
+        transition: none;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.filter__simple-item:focus {
+    outline: 2px solid #007bff;
+    outline-offset: -2px;
+}

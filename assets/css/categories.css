@@ -17,10 +17,10 @@
 
 .categories__swiper {
     overflow: visible;
+    padding: 5px 0;
 }
 
 .categories__slide {
-    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,19 +35,16 @@
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
-    min-height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     border: 2px solid transparent;
     width: 100%;
-    max-width: 151px;
 }
 
 .category-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     border-color: #007aff;
 }
 
@@ -115,7 +112,7 @@
 
 .categories__nav-btn--next {
     position: absolute;
-    right: -1270px !important;
+    right: -1275px !important;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -161,6 +158,11 @@
         width: 40px;
         height: 40px;
         font-size: 20px;
+    }
+    .category-card__icon img {
+        width: 100%;
+        aspect-ratio: calc(1 / 1);
+        object-fit: cover;
     }
 
     .category-card__title {
